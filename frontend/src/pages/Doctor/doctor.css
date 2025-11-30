@@ -1,0 +1,382 @@
+.doctor-dashboard {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: var(--color-primary);
+
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 70px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--color-gray);
+}
+
+.welcome-section h1 {
+  margin-bottom: 5px;
+}
+
+.welcome-section p {
+  color: var(--color-gray);
+  font-size: 1.1em;
+}
+
+.user-info {
+  text-align: right;
+}
+
+.user-role {
+  background: var(--color-hover);
+  color: var(--pure-white);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.specialization {
+  display: block;
+  color: var(--color-gray);
+  margin-top: 5px;
+}
+
+.dashboard-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--color-gray);
+  padding-bottom: 10px;
+}
+
+.tab-button {
+  padding: 12px 24px;
+  border: none;
+  background: var(--pure-white);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.tab-button.active {
+  background: var(--color-primary);
+  color: var(--pure-white);
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+.stats-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.stat-card {
+  margin-top: 20px;;
+  background: var(--pure-white);
+  padding: 25px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.stat-info h3 {
+  font-size: 2em;
+  margin: 0;
+  color: var(--color-primary);
+}
+
+.stat-info p {
+  margin: 5px 0 0 0;
+  color: var(--color-gray);
+}
+
+.visits-container {
+  background: var(--pure-white);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.visits-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.filter-select {
+  padding: 8px 15px;
+  border: 1px solid var(--selected-bg);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.visits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.visit-card {
+  border: 1px solid var(--color-gray);
+  border-radius: 8px;
+  padding: 20px;
+  background: var(--pure-white);
+}
+
+.visit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.visit-header h3 {
+  margin: 0;
+  color: var(--color-primary);
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status-scheduled { background: var(--color-medium); color: var( --pure-white); }
+.status-in-progress { background: var(--color-secondary); color: var( --pure-white); }
+.status-completed { background: var( --color-strong); color: var( --pure-white); }
+.status-cancelled { background: var(--color-danger-dark);; color: var( --pure-white); }
+
+.visit-details p {
+  margin: 5px 0;
+  color: var(--color-gray);
+}
+
+.visit-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary { background: var(--color-primary); color: var(--pure-white); }
+.btn-secondary { background: var(--color-gray); color:var(--pure-white); }
+.btn-success { background: var(--color-green); color: var(--pure-white);  }
+.btn-outline { background: transparent; border: 1px solid var(--color-hover); color: var(--color-hover); }
+.btn-danger { background: var(--color-danger-dark); color: var(--pure-white); }
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--pure-white);
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--border-white);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--color-gray);
+}
+
+.medical-form {
+  padding: 0;
+}
+
+.medical-form form {
+  padding: 20px;
+}
+
+.form-section {
+  margin-bottom: 25px;
+  background: var(--pure-white);
+}
+
+.form-section label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.form-section textarea,
+.form-section input {
+  background: var(--pure-white) ;  
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-gray);
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.treatment-item {
+  border: 1px solid var(--border-white);
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 15px;
+  
+}
+
+.treatment-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.treatment-row input {
+  flex: 1;
+}
+
+.total-amount {
+  text-align: right;
+  padding: 15px 0;
+  border-top: 1px solid var(--pure-white);
+  margin-top: 15px;
+  color: var(--color-primary);
+  font-size: 1.2em;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid var(--pure-white);
+}
+
+.start-visit-form {
+  background: var(--pure-white);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-header {
+  margin-bottom: 30px;
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  position: relative;
+}
+
+.progress-steps::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--pure-white);
+  z-index: 1;
+}
+
+.progress-steps span {
+  background: var(--pure-white);
+  padding: 0 15px;
+  position: relative;
+  z-index: 2;
+  color: var(--color-gray);
+}
+
+.progress-steps span.active {
+  color: var(--color-hover);
+  font-weight: bold;
+}
+
+.visit-step {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.patient-info {
+  text-align: left;
+  background: var(--border-white);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.step-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.no-visits {
+  text-align: center;
+  padding: 40px;
+  color: var(--color-gray);
+  font-style: italic;
+}
