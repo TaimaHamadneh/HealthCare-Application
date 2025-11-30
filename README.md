@@ -1,8 +1,10 @@
 # Healthcare Management Application
 A Full-Stack Project (MongoDB • React • Node.js). It implements a simple healthcare workflow involving Admin, Patients, Doctors, and Finance roles.
 <p align="center">
-<img width="300" height="881" alt="image" src="https://github.com/user-attachments/assets/49264ba1-835b-4e7d-8bd8-857eecd05935" />
-<img width="300" height="865" alt="image" src="https://github.com/user-attachments/assets/ead97f53-a1d4-424e-86fb-97fb513b15d4" />
+<img width="900" height="800" alt="image" src="https://github.com/user-attachments/assets/ecd68490-1742-4df8-92f3-3f36fae00927" />
+<img width="900" height="800" alt="image" src="https://github.com/user-attachments/assets/62eece97-5e29-45e9-843c-6720a68548c2" />
+<img width="900" height="800" alt="image" src="https://github.com/user-attachments/assets/76dd209f-1c55-446f-9b89-8369208d0f95" />
+<img width="900" height="800" alt="image" src="https://github.com/user-attachments/assets/1f3f96a6-998a-48da-bcc4-db13bc407125" />
 
   </p>
 ---
