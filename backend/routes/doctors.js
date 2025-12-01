@@ -58,9 +58,15 @@ router.put('/visits/:id/start', auth, requireRole(['doctor']), async (req, res) 
 
 // Add treatments and medical info
 router.put('/visits/:id/treatments', auth, requireRole(['doctor']), async (req, res) => {
-  try {
-    const { treatments, diagnosis, notes } = req.body;
+  console.log(req.body);
 
+console.log('_id'+ req.params.id + 'Dr. '+req.user._id );
+
+  console.log('Start Updating...');
+  try {
+    console.log(' start try...');
+
+    const { treatments, diagnosis, notes } = req.body;
     const totalAmount = Array.isArray(treatments)
       ? treatments.reduce((sum, t) => sum + Number(t.value || 0), 0)
       : 0;
@@ -69,19 +75,21 @@ router.put('/visits/:id/treatments', auth, requireRole(['doctor']), async (req, 
       {
         _id: req.params.id,
         doctor: req.user._id,
-        status: 'in-progress'   
+        status: { $in: ['in-progress', 'completed'] }
       },
       {
         $set: {
           treatments,
           diagnosis,
-          notes,
+          notes, 
           totalAmount
         }
       },
       { new: true }
     ).populate('patient', 'name phone dateOfBirth');
 
+    console.log('After Searching process');
+    console.log(visit);
     if (!visit) {
       return res.status(404).json({ message: 'Visit not found or cannot be updated' });
     }
