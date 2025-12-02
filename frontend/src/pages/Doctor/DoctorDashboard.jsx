@@ -37,8 +37,9 @@ const DoctorDashboard = () => {
 
   const handleMedicalFormClose = () => {
     setShowMedicalForm(false);
-    setSelectedVisit(null);
     fetchDoctorVisits(); 
+    setActiveTab('visits');
+    setSelectedVisit(null);
   };
 
   const handleCompleteVisit = async (visitId) => {
@@ -52,6 +53,7 @@ const DoctorDashboard = () => {
     }
   };
   const handleBackFromVisit = () => {
+    fetchDoctorVisits();
     setSelectedVisit(null); 
     setActiveTab('visits');
   };
@@ -73,7 +75,8 @@ const DoctorDashboard = () => {
             onStartVisit={handleStartVisit}
             onAddMedicalInfo={handleAddMedicalInfo}
             refreshVisits={fetchDoctorVisits}
-            currentVisit={selectedVisit}
+           /// currentVisit={selectedVisit}
+            selectedVisit={selectedVisit}
           />
         );
       case 'current-visit':
