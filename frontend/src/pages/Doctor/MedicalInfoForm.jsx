@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDoctor } from '../../context/DoctorContext';
 
 const MedicalInfoForm = ({ visit, onClose, onSave, onComplete }) => {
-  const { updateTreatments, completeVisit } = useDoctor();
+  const { updateTreatments, completeVisit , fetchDoctorVisits} = useDoctor();
   const [formData, setFormData] = useState({
     diagnosis: visit.diagnosis || '',
     notes: visit.notes || '',
@@ -38,11 +38,9 @@ const MedicalInfoForm = ({ visit, onClose, onSave, onComplete }) => {
     e.preventDefault();
     try {
       await updateTreatments(visit._id, formData);
-      
-        await completeVisit(visit._id);
-      
-      onComplete(visit._id);
-
+      await completeVisit(visit._id); 
+      await fetchDoctorVisits(); 
+      onSave(); 
     } catch (error) {
       alert('Error saving medical information: ' + error.message);
       return;
@@ -141,8 +139,9 @@ const MedicalInfoForm = ({ visit, onClose, onSave, onComplete }) => {
               Cancel
             </button>
             <button type="submit" className="btn btn-primary">
-            Complete Visit
+              Save Medical Info
             </button>
+           
           </div>
         </form>
       </div>
