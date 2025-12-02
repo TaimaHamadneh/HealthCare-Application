@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDoctor } from "../../context/DoctorContext";
 
-const DoctorVisits = ({ visits, onStartVisit, onAddMedicalInfo, refreshVisits, selectedVisit }) => {
+const DoctorVisits = ({ visits, onStartVisit, onAddMedicalInfo, hasActiveVisit }) => {
   const [filter, setFilter] = useState('all');
 
   const filteredVisits = visits.filter(visit => {
@@ -29,7 +29,6 @@ const DoctorVisits = ({ visits, onStartVisit, onAddMedicalInfo, refreshVisits, s
 
   const sortedVisits = sortVisits(filteredVisits);
   
-
   const getStatusBadge = (status) => {
     const statusConfig = {
       scheduled: { class: 'status-scheduled', text: 'Scheduled' },
@@ -82,13 +81,21 @@ const DoctorVisits = ({ visits, onStartVisit, onAddMedicalInfo, refreshVisits, s
               </div>
 
               <div className="visit-actions">
-                {selectedVisit?._id === visit._id || visit.status === 'in-progress' ? (
-                  <button 
-                    className="btn btn-secondary"
-                    onClick={() => onAddMedicalInfo(visit)}
-                  >
-                    Add Medical Info
-                  </button>
+                {visit.status === 'in-progress' ? (
+                  <>
+                    <button 
+                      className="btn btn-primary"
+                      onClick={() => onStartVisit(visit)}
+                    >
+                      Continue Visit
+                    </button>
+                    <button 
+                      className="btn btn-secondary"
+                      onClick={() => onAddMedicalInfo(visit)}
+                    >
+                      Add Medical Info
+                    </button>
+                  </>
                 ) : visit.status === 'scheduled' ? (
                   <button 
                     className="btn btn-primary"
